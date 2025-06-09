@@ -1,0 +1,292 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.card {
+  background-color: var(--background);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--gray-alpha-200);
+}
+
+.header {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--foreground);
+}
+
+.description {
+  font-size: 16px;
+  color: var(--foreground);
+  opacity: 0.8;
+}
+
+.claimInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.amountContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  background-color: var(--gray-alpha-100);
+  border-radius: 12px;
+}
+
+.amountLabel {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--foreground);
+  opacity: 0.7;
+}
+
+.amountValue {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.tokenAmount {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+.tokenSymbol {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--foreground);
+  opacity: 0.8;
+}
+
+.usdValue {
+  font-size: 14px;
+  color: var(--foreground);
+  opacity: 0.6;
+}
+
+.eligibilityContainer {
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px dashed var(--gray-alpha-200);
+}
+
+.eligibilityTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--foreground);
+}
+
+.eligibilityList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.eligibilityItem {
+  font-size: 14px;
+  color: var(--foreground);
+  opacity: 0.8;
+  padding: 6px 0;
+  display: flex;
+  align-items: center;
+}
+
+.eligibilityItem.eligible::before {
+  content: '✓';
+  display: inline-block;
+  margin-right: 8px;
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.eligibilityItem.ineligible::before {
+  content: '×';
+  display: inline-block;
+  margin-right: 8px;
+  color: #f44336;
+  font-weight: bold;
+}
+
+.eligibilityItem.ineligible {
+  opacity: 0.6;
+}
+
+.claimActions {
+  display: flex;
+  justify-content: center;
+}
+
+.connectWalletButton, .claimButton {
+  min-width: 200px;
+  height: 48px;
+  padding: 0 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.connectWalletButton {
+  background-color: #7e57ff;
+  color: white;
+}
+
+.connectWalletButton:hover {
+  background-color: #6a46eb;
+}
+
+.claimButton {
+  background-color: #7e57ff;
+  color: white;
+}
+
+.claimButton:hover:not(:disabled) {
+  background-color: #6a46eb;
+}
+
+.claimButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.claimButton.loading {
+  position: relative;
+  color: transparent;
+}
+
+.claimButton.loading::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.infoCard {
+  background-color: var(--background);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--gray-alpha-200);
+}
+
+.infoHeader {
+  margin-bottom: 16px;
+}
+
+.infoTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+.infoContent {
+  font-size: 14px;
+  color: var(--foreground);
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+.infoContent p {
+  margin-bottom: 16px;
+}
+
+.timeline {
+  margin: 24px 0;
+  border-left: 2px solid var(--gray-alpha-200);
+  padding-left: 16px;
+}
+
+.timelineItem {
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.timelineItem::before {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #7e57ff;
+  left: -23px;
+  top: 4px;
+}
+
+.timelineDate {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.timelineEvent {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.tokenInfo {
+  background-color: var(--gray-alpha-100);
+  padding: 16px;
+  border-radius: 8px;
+  margin-top: 16px;
+}
+
+.tokenInfoItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.tokenInfoLabel {
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 16px;
+  }
+  
+  .title {
+    font-size: 24px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .card, .infoCard {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+} 
